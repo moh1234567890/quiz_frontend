@@ -1,0 +1,34 @@
+
+<div>
+    <form #newstudent="ngForm" (ngSubmit)="onsubmit(newstudent)" enctype="multipart/form-data">
+    <label for="studentname">Name</label>
+    <input type="text" placeholder="enter your name" [(ngModel)]="studentname" name="studentname" required><br>
+    <label for="studentclass">Class</label>
+    <input type="number" placeholder="enter your class" [(ngModel)]="studentclass" name="studentclass"required><br>
+    <label for="studentroll">RollNo</label>
+    <input type="number" placeholder="enter your rollno" [(ngModel)]="studentroll" name="studentroll" required><br>
+    <label for="studentemail">Email</label>
+    <input type="text" placeholder="enter your email" [(ngModel)]="studentemail" name="studentemail" required><br>
+    <input type="file" (change)="createFormData($event)" name="file">
+        <button  type="submit" (click)="register()" >REGISTER</button>
+
+    
+
+    
+</form>
+
+
+
+<div>
+    <div>
+      <input type="file" (change)="createFormData($event)">
+        </div>
+        <button (click)="upload()">Upload</button>
+</div>
+
+
+
+<div *ngIf="registerbtn">
+    <h2>REGISTER SUCCESS</h2>
+</div>
+</div>

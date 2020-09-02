@@ -1,0 +1,84 @@
+<!--<div><h4>question 1:</h4>
+<p>what is the capital of india</p>
+<div *ngFor="let option of options">
+    <input type="radio" name="question0" value="{{option}}" (change)="answerhandler($event)">
+    <i>{{option}}</i></div>
+    <p>you selected:<b>{{selectedAnswer}}</b></p>
+
+<button (click)="next">NEXT</button>
+</div>
+
+
+
+<div >
+    <div >
+    <h4>question 2:</h4>
+    <p>who is mohit</p>
+        <div *ngFor="let option of options2">
+        <input type="radio" name="question1" value="{{option}}" (change)="answerhandler2($event)">
+        <i>{{option}}</i></div>
+        <p>you selected:<b>{{selectedAnswer}}</b></p>
+        
+
+    </div>
+    <button (click)="next">NEXT</button>
+
+</div>
+<div *ngIf="count">
+    <button (click)="submitquiz()">SUBMIT QUIZ</button></div>
+     <p>score<b>{{score}}</b></p> -->
+     <h2>welcome     {{studentname}}</h2>
+     <form #studentquiz="ngForm" (ngSubmit)="onsubmit(studentquiz)">
+        <input type="text" [(ngModel)]="studentname" name="studentname" readonly>
+        <input type="number" [(ngModel)]="studentclass" name="studentclass" readonly>
+        <input type="number" [(ngModel)]="studentroll" name="studentroll" readonly>
+       <!--<img src="./upload/{{imagename}}" alt="profile pic" width="50" height="40">
+       {{imagename}}!-->
+       <div *ngIf="counter==1">
+            <h4>question 1:</h4>
+            <p>what is the capital of india</p>
+            <div *ngFor="let option of options">
+                <input type="radio" [(ngModel)]="ans1" name="question0" value="{{option}}" (change)="answerhandler($event,ans1)">
+                <i>{{option}}</i>
+                
+            </div>
+            
+            
+                <p>you selected:<b>{{ans1}}</b></p>
+                </div>
+                
+                
+                <div *ngIf="counter==2">
+                <h4>question 2:</h4>
+                <p>who is mohit</p>
+                    <div *ngFor="let option of options2">
+                    <input type="radio" [(ngModel)]="ans2" name="question1" value="{{option}}" (change)="answerhandler2($event,ans2)">
+                    <i>{{option}}</i></div>
+                    <p>you selected:<b>{{ans2}}</b></p>
+                    </div>
+
+                    <div *ngIf="counter==3">
+                <h4>question 3:</h4>
+                <p>higher kh value effect on soulibility:</p>
+                    <div *ngFor="let option of options3">
+                    <input type="radio" [(ngModel)]="ans3" name="question2" value="{{option}}" (change)="answerhandler3($event,ans3)">
+                    <i>{{option}}</i></div>
+                    <p>you selected:<b>{{ans3}}</b></p>
+                    </div>
+                    <input type="number" [(ngModel)]="finalscore" name="finalscore">
+                    
+                    
+                      
+        
+        
+        
+                    <input type="submit">
+                    <button type="button" (click)="logout()">LOGOUT</button>
+                    <div *ngIf="submitbtn">
+                        <h1>YOU HAVE SUCCESFULLY COMPLETED QUIZ</h1>
+                    </div>
+                    
+
+                    
+        
+    </form>  

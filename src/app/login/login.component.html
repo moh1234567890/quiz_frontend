@@ -1,0 +1,19 @@
+<div class="cointainer">
+<form #logstudent="ngForm" (ngSubmit)="onsubmit(logstudent)">
+    <label for="studentname">Name</label>
+    <input type="text" placeholder="Your Name..." [(ngModel)]="studentname" name="studentname" required><br>
+
+    <label for="studentroll">RollNo</label>
+    <input type="number" placeholder="Your RollNo..." [(ngModel)]="studentroll" name="studentroll" required><br>
+    <button type="submit">LOGIN</button>
+    
+    
+    
+
+    
+</form>
+<div *ngIf="userlogin" >
+    <button (click)="openquiz()" >TAKE QUIZ</button>
+    <h2>LOGIN SUCCESS</h2></div>
+
+</div>

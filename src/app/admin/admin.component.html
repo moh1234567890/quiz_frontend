@@ -1,0 +1,65 @@
+
+<div>
+
+<button (click)="viewStudent()">VIEW STUDENT</button><button (click)="viewScoreStudent()">VIEW SCORE OF STUDENT</button>
+<div *ngIf="downloadbtn">
+<button (click)="download()"> DOWNLOAD</button></div>
+<button (click)="downloadscore()"> DOWNLOADScore</button></div>
+
+<div id="content">
+<div *ngIf="students">
+     <div *ngFor="let resident of listOfStudents;let i=index" >
+     <table>
+          <tr>
+          <th>sr.no</th>
+          <th>studentname</th>
+          <th>studentclass</th>
+          <th>studentrollno </th>
+          </tr>
+          
+          
+          <tr>
+               <td><b>{{i+1}}</b></td>
+               <td><b>{{resident.studentname}}</b></td>
+               <td><b>{{resident.studentclass}}</b></td>
+               <td><b>{{resident.studentroll}}</b></td>
+          </tr>
+     </table>
+     
+     </div>
+    
+               
+               
+</div>
+</div>
+
+<div id="contentscore">
+<div *ngIf="scorestudents">
+     
+  <div *ngFor="let resident of listOfScoreStudents;let i=index"> 
+     <table>
+          <tr>
+               <th>sr.no</th>
+          
+          <th>studentname</th>
+          <th>studentclass</th>
+          <th>studentrollno </th>
+          <th>finalscore</th>
+          </tr>
+          <tr>
+               <td>{{i+1}}</td>
+               <td><b>{{resident.studentname}}</b></td>
+               <td><b>{{resident.studentclass}}</b></td>
+               <td><b>{{resident.studentroll}}</b></td>
+               <td><b>{{resident.finalscore}}</b></td>
+          </tr>
+     </table>
+     </div>
+               
+               
+   </div>
+  
+</div>
+
+
+
